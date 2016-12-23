@@ -1,0 +1,17 @@
+#Change data to comma seprated
+sed -i $'s/\t/,/g' ydata-ymusic-user-artist-ratings-v1_0.txt
+sed -i $'s/\t/,/g' ydata-ymusic-artist-names-v1_0.txt
+
+#Run recommendation algorithm
+/usr/local/lib/apache-maven-3.3.9/apache-mahout-distribution-0.12.2/bin/mahout recommenditembased -s SIMILARITY_LOGLIKELIHOOD -i yahoomusic/ydata-ymusic-user-artist-ratings-v1_0.txt -o yahoomusic/musicout/ --numRecommendations 10
+
+cd musicout
+cp part-r-00000 recout.csv
+sed -i $'s/\t//g' recout.csv
+sed -i $'s/\[/,/g' recout.csv
+sed -i $'s/\]//g' recout.csv
+sed -i $'s/:/,/g' recout.csv
+cut -d',' -f 1,2,4,6,8,10,12,14,16,18,20 recout.csv > movrec.csv
+
+#Replace id with names
+awk -f code.awk yahoomusic/ydata-ymusic-artist-names-v1_0.txt musicout/recout.csv > recmov.csv

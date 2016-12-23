@@ -1,0 +1,6 @@
+1,Fletch Lives (1989),Public Enemies (2009),"Paper Chase,Excess Baggage (1997),Don't Tell Mom the Babysitter's Dead (1991),"Ninth Gate,Clash of the Titans (1981),In the Army Now (1994),Fools Rush In (1997),Single White Female (1992)
+2,"Last Detail,Liberty Heights (1999),"Virgin Suicides,Startup.com (2001),Chaplin (1992),"Distinguished Gentleman,Frankie and Johnny (1991),"Road to Wellville,RocketMan (a.k.a. Rocket Man) (1997),"Lookout
+3,Surviving the Game (1994),"Distinguished Gentleman,Cemetery Man (Dellamorte Dellamore) (1994),Set It Off (1996),"Awfully Big Adventure,K-9 (1989),3000 Miles to Graceland (2001),Something to Talk About (1995),3 Ninjas Kick Back (1994),"Arrival
+5,Ultraviolet (2006),Surf's Up (2007),"Weather Man,Four Lions (2010),Red Sonja (1985),Gung Ho (1986),Impostor (2002),Hollow Man (2000),Cabin Boy (1994),They Live (1988)
+6,Three Men and a Baby (1987),Lantana (2001),"House of Mirth,Panic (2000),Three Men and a Little Lady (1990),Funny Girl (1968),Sidewalks of New York (2001),Punch-Drunk Love (2002),Chuck & Buck (2000),"Straight Story
+7,Brief Encounter (1946),Dragnet (1987),Slap Shot (1977),State and Main (2000),"Cannonball Run,"Longest Yard,Hamlet (1990),Team America: World Police (2004),"Life Aquatic with Steve Zissou,Teen Wolf (1985)

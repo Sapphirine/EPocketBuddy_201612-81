@@ -1,0 +1,20 @@
+
+#To delete header
+sed -i 1d companynamelisttab.txt
+
+
+#Recommendation
+/usr/local/lib/apache-maven-3.3.9/apache-mahout-distribution-0.12.2/bin/mahout recommenditembased -s SIMILARITY_LOGLIKELIHOOD -i share/share.csv -o share/shareout/ --numRecommendations 5
+
+cd shareout
+cp part-r-00000 recout.csv
+
+sed -i $'s/\t//g' recout.csv
+sed -i $'s/\[/,/g' recout.csv
+sed -i $'s/\]//g' recout.csv
+sed -i $'s/:/,/g' recout.csv
+cut -d',' -f 1,2,4,6,8,10,12,14,16,18,20 recout.csv > sharerec.csv
+sed -i $'s/,/\t/g' recout.csv
+
+#Replace id with names
+awk -f sharecode.awk companynamelisttab.txt.csv shareout/sharerec.csv > recshare.csv

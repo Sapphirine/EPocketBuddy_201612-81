@@ -1,0 +1,20 @@
+#To delete header
+sed -i 1d ratings.csv
+#To remove timestamp column
+cut -d',' -f 1,2,3 ratings.csv > ratingmod.csv
+
+/usr/local/lib/apache-maven-3.3.9/apache-mahout-distribution-0.12.2/bin/mahout recommenditembased -s SIMILARITY_LOGLIKELIHOOD -i ml-latest/ratingmod.csv -o ml-latest/mlout/ --numRecommendations 10
+cd mlout
+cp part-r-00000 recout.csv
+
+sed -i $'s/\t//g' recout.csv
+sed -i $'s/\[/,/g' recout.csv
+sed -i $'s/\]//g' recout.csv
+sed -i $'s/:/,/g' recout.csv
+cut -d',' -f 1,2,4,6,8,10,12,14,16,18,20 recout.csv > movrec.csv
+
+#To delete header
+sed -i 1d movies.csv
+
+#Replace id with names
+awk -f code.awk mlout/movies.csv mlout/movrec.csv > recmov.csv
